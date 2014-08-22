@@ -22,16 +22,16 @@ Brandung.Helpers.equalHeights = function (group, heightSelector) {
 		var _self = $(this);
 
 		_self.removeAttr('style');
-		topPostion = _self.position().top;
+		topPosition = _self.position().top;
 
-		if (currentRowStart != topPostion) {
+		if (currentRowStart != topPosition) {
 			// we just came to a new row.  Set all the heights on the completed row
 			for (currentDiv = 0; currentDiv < rowDivs.length; currentDiv++) {
 				rowDivs[currentDiv].height(currentTallest);
 			}
 			// set the variables for the new row
 			rowDivs.length = 0; // empty the array
-			currentRowStart = topPostion;
+			currentRowStart = topPosition;
 			currentTallest = _self.height();
 			rowDivs.push(_self);
 		} else {
